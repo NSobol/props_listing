@@ -4,6 +4,7 @@ import propTypes from "prop-types";
 function ListItem({ item }) {
   const { url, MainImage, title, currency_code, price, quantity, state } = item;
   if (state !== "active") {
+    // если товар отсутствует или данные о нем изменены
     return null;
   }
   const name = title.length > 50 ? `${title.slice(0, 50)}...` : title;
